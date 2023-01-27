@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="TwitterFirebase" customModuleProvider="target">
+            <connections>
+                <outlet property="passwordField" destination="1tF-n2-WzG" id="qd6-B5-nwv"/>
+                <outlet property="usernameField" destination="bvh-CL-n6s" id="l1h-A9-Uct"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kullanıcı Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvh-CL-n6s">
+                    <rect key="frame" x="87" y="285" width="240" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tF-n2-WzG">
+                    <rect key="frame" x="87" y="369" width="240" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lütfen Giriş Yapın veya Hesap Oluşturun." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjJ-Nb-Y1S">
+                    <rect key="frame" x="36" y="180" width="343" height="15"/>
+                    <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOc-Nd-9TG">
+                    <rect key="frame" x="35" y="503" width="133" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="133" id="DLs-Dp-K9A"/>
+                        <constraint firstAttribute="height" constant="35" id="QAV-BA-JqK"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Giriş Yap">
+                        <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="loginButtonClicked:" destination="-1" eventType="touchUpInside" id="abS-93-mrH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwj-TX-2tj">
+                    <rect key="frame" x="246" y="503" width="133" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="aaq-o5-dIg"/>
+                        <constraint firstAttribute="width" constant="133" id="iV8-VV-igk"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Hesap Oluştur">
+                        <color key="baseBackgroundColor" red="0.38103693179999998" green="0.18393875370000001" blue="0.32322647199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="createUserButtonClicked:" destination="-1" eventType="touchUpInside" id="obp-qk-Nk6"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="mjJ-Nb-Y1S" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="132" id="7jo-01-Gxk"/>
+                <constraint firstItem="mOc-Nd-9TG" firstAttribute="top" secondItem="1tF-n2-WzG" secondAttribute="bottom" constant="100" id="BxL-Cb-O0g"/>
+                <constraint firstItem="bvh-CL-n6s" firstAttribute="top" secondItem="mjJ-Nb-Y1S" secondAttribute="bottom" constant="90" id="Djc-Yo-UQs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1tF-n2-WzG" secondAttribute="trailing" constant="87" id="OYP-cc-Cca"/>
+                <constraint firstItem="1tF-n2-WzG" firstAttribute="top" secondItem="bvh-CL-n6s" secondAttribute="bottom" constant="50" id="QkW-ko-IWM"/>
+                <constraint firstItem="qwj-TX-2tj" firstAttribute="top" secondItem="1tF-n2-WzG" secondAttribute="bottom" constant="100" id="RAq-5y-FJx"/>
+                <constraint firstItem="1tF-n2-WzG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="87" id="UfX-Vq-d03"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qwj-TX-2tj" secondAttribute="trailing" constant="35" id="WBa-Rh-eRE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bvh-CL-n6s" secondAttribute="trailing" constant="87" id="bvd-FR-6gt"/>
+                <constraint firstItem="mOc-Nd-9TG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="35" id="pEh-Al-nh7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mjJ-Nb-Y1S" secondAttribute="trailing" constant="35" id="u6L-QH-tcP"/>
+                <constraint firstItem="mjJ-Nb-Y1S" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="36" id="v4n-tK-Aeu"/>
+                <constraint firstItem="bvh-CL-n6s" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="87" id="vac-gM-fMl"/>
+            </constraints>
+            <point key="canvasLocation" x="101.44927536231884" y="19.419642857142858"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

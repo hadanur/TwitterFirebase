@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedVC" customModule="TwitterFirebase" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="xlY-Xk-Pdw" id="iDP-zj-oaZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xlY-Xk-Pdw">
+                    <rect key="frame" x="0.0" y="160" width="393" height="658"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="ElU-4A-QeH">
+                    <rect key="frame" x="173" y="40" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="QXV-nD-fht"/>
+                        <constraint firstAttribute="width" constant="46" id="Ura-Ct-erB"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Takip Edilen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62j-1o-TqC">
+                    <rect key="frame" x="248" y="109" width="95" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senin İçin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZi-PQ-c5m">
+                    <rect key="frame" x="50" y="109" width="77" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ElU-4A-QeH" secondAttribute="trailing" constant="174" id="1S7-bA-1WI"/>
+                <constraint firstItem="ElU-4A-QeH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="173" id="2C0-Vu-Ck5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="62j-1o-TqC" secondAttribute="trailing" constant="50" id="G2M-5t-KAe"/>
+                <constraint firstItem="62j-1o-TqC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="IVD-cM-e5e"/>
+                <constraint firstItem="gZi-PQ-c5m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="PKW-oy-Kt9"/>
+                <constraint firstItem="xlY-Xk-Pdw" firstAttribute="top" secondItem="gZi-PQ-c5m" secondAttribute="bottom" constant="30" id="UOe-bH-6ij"/>
+                <constraint firstItem="xlY-Xk-Pdw" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="WwT-J6-aIR"/>
+                <constraint firstItem="xlY-Xk-Pdw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Zye-Vi-lqr"/>
+                <constraint firstItem="xlY-Xk-Pdw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="b2Q-Wg-meH"/>
+                <constraint firstItem="gZi-PQ-c5m" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="ccF-ab-b4a"/>
+                <constraint firstItem="ElU-4A-QeH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-19" id="g35-WZ-0N4"/>
+            </constraints>
+            <point key="canvasLocation" x="116.79389312977099" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon" width="247" height="204"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
