@@ -12,13 +12,38 @@ import Firebase
 protocol ProfileVMDelegate: AnyObject {
     func getDataSuccess()
     func getDataError()
+    func getUserMailError()
+    func getUserMail(_ mail: String)
+    func logout()
+    func logoutError()
 }
 
 class ProfileVM {
     weak var delegate: ProfileVMDelegate?
     var tweets = [TweetModel]()
+
+    func fetchUserName() {
+        do {
+            let userMail = try Auth.auth().currentUser?.email
+
+            if let userMail = userMail {
+                delegate?.getUserMail(userMail)
+            }
+        } catch {
+            delegate?.getUserMailError()
+        }
+    }
+
+    func logoutButtonTapped() {
+        do {
+            try Auth.auth().signOut()
+            delegate?.logout()
+        } catch {
+            delegate?.logoutError()
+        }
+    }
     
-    func getDataFromFirebase(){
+    func viewDidLoad(){
         let fireStoreDatabase = Firestore.firestore()
         
         fireStoreDatabase.collection("Tweets").addSnapshotListener { (snapshot, error) in
@@ -42,5 +67,4 @@ class ProfileVM {
             }
         }
     }
-  
 }

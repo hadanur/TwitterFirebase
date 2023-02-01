@@ -9,9 +9,9 @@ import UIKit
 
 class CreateTweetVC: UIViewController {
 
-    @IBOutlet weak var userTextView: UITextView!
+    @IBOutlet private weak var userTextView: UITextView!
     
-    var viewModel: CreateTweetVM!
+    private var viewModel: CreateTweetVM!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +21,12 @@ class CreateTweetVC: UIViewController {
         userTextView.layer.cornerRadius = 4
         userTextView.layer.borderColor = CGColor(red: 0.0 / 255.0, green: 0.0 / 255.0, blue: 0.0 / 255.0, alpha: 0.15)
     }
-    @IBAction func createButtonClicked(_ sender: Any) {
+
+    @IBAction private func createButtonClicked(_ sender: Any) {
         viewModel.createTweet(tweetDescription: userTextView.text)
     }
     
-    @IBAction func cancelButtonClicked(_ sender: Any) {
+    @IBAction private func cancelButtonClicked(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     

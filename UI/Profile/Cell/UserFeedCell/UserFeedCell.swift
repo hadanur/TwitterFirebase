@@ -10,10 +10,10 @@ import UIKit
 
 class UserFeedCell: UITableViewCell {
     
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var userTextLabel: UILabel!
-    @IBOutlet weak var userFeedView: UIView!
-    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet private weak var usernameLabel: UILabel!
+    @IBOutlet private weak var userTextLabel: UILabel!
+    @IBOutlet private weak var userFeedView: UIView!
+    @IBOutlet private weak var profilePicture: UIImageView!
     
     func configure(tweet: TweetModel) {
         usernameLabel.text = tweet.tweetedBy

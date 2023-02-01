@@ -12,7 +12,7 @@ import FirebaseDatabase
 class FeedVC: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
-    var viewModel: FeedVM!
+    private var viewModel: FeedVM!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +23,12 @@ class FeedVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         viewModel.delegate = self
-        viewModel.getDataFromFirebase()
+
+        viewModel.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(profileButtonClicked))
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createButtonClicked))
-        
-        
     }
 
     @objc private func profileButtonClicked(){
@@ -65,11 +64,11 @@ extension FeedVC {
 
 extension FeedVC: FeedVMDelegate {
     func getDataSuccess() {
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
     func getDataError() {
-        self.showAlert(title: "Hata", message: "Veriler Yüklenemedi.")
+        showAlert(title: "Hata", message: "Veriler Yüklenemedi.")
     }
     
     

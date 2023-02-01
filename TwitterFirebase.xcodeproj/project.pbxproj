@@ -44,7 +44,6 @@
 		B78F6A722982F50700726975 /* UserFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F6A712982F50700726975 /* UserFeedCell.swift */; };
 		B78F6A762982F54400726975 /* UserFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78F6A752982F54400726975 /* UserFeedCell.xib */; };
 		B78F6A792983179500726975 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F6A782983179500726975 /* UIViewController + Extensions.swift */; };
-		B78F6A7C29831F8400726975 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B78F6A7B29831F8400726975 /* GoogleService-Info.plist */; };
 		B78F6A7E2983228700726975 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F6A7D2983228700726975 /* ProfileVM.swift */; };
 		B78F6A862983272100726975 /* CreateTweetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F6A842983272100726975 /* CreateTweetVC.swift */; };
 		B78F6A872983272100726975 /* CreateTweetVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78F6A852983272100726975 /* CreateTweetVC.xib */; };
@@ -52,6 +51,7 @@
 		B78F6A912983CD6A00726975 /* TweetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F6A902983CD6A00726975 /* TweetModel.swift */; };
 		B78F6A932983CE5600726975 /* FeedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F6A922983CE5600726975 /* FeedVM.swift */; };
 		B78F6A962983D14500726975 /* UIScrollView_InfiniteScroll in Frameworks */ = {isa = PBXBuildFile; productRef = B78F6A952983D14500726975 /* UIScrollView_InfiniteScroll */; };
+		BA258926298B14AF002E005D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA258925298B14AF002E005D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,13 +73,13 @@
 		B78F6A712982F50700726975 /* UserFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedCell.swift; sourceTree = "<group>"; };
 		B78F6A752982F54400726975 /* UserFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserFeedCell.xib; sourceTree = "<group>"; };
 		B78F6A782983179500726975 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
-		B78F6A7B29831F8400726975 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B78F6A7D2983228700726975 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		B78F6A842983272100726975 /* CreateTweetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetVC.swift; sourceTree = "<group>"; };
 		B78F6A852983272100726975 /* CreateTweetVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTweetVC.xib; sourceTree = "<group>"; };
 		B78F6A8D29832B3100726975 /* CreateTweetVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetVM.swift; sourceTree = "<group>"; };
 		B78F6A902983CD6A00726975 /* TweetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetModel.swift; sourceTree = "<group>"; };
 		B78F6A922983CE5600726975 /* FeedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVM.swift; sourceTree = "<group>"; };
+		BA258925298B14AF002E005D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +146,7 @@
 		B78F6A212982A57400726975 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				B78F6A7B29831F8400726975 /* GoogleService-Info.plist */,
+				BA258925298B14AF002E005D /* GoogleService-Info.plist */,
 				B78F6A0D2982A53100726975 /* AppDelegate.swift */,
 				B78F6A0F2982A53100726975 /* SceneDelegate.swift */,
 				B78F6A1B2982A53200726975 /* Info.plist */,
@@ -349,8 +349,8 @@
 				B78F6A1A2982A53200726975 /* LaunchScreen.storyboard in Resources */,
 				B78F6A662982ED4F00726975 /* FeedCell.xib in Resources */,
 				B78F6A872983272100726975 /* CreateTweetVC.xib in Resources */,
-				B78F6A7C29831F8400726975 /* GoogleService-Info.plist in Resources */,
 				B78F6A6B2982F3D000726975 /* ProfileVC.xib in Resources */,
+				BA258926298B14AF002E005D /* GoogleService-Info.plist in Resources */,
 				B78F6A292982A5F100726975 /* HomeVC.xib in Resources */,
 				B78F6A172982A53200726975 /* Assets.xcassets in Resources */,
 			);

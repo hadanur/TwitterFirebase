@@ -14,29 +14,38 @@ protocol HomeVMDelegate: AnyObject {
     func createUserSuccess()
     func createUserError()
     func logInSuccess()
-    func logInError()
+    func logInAuthError(errorMessage: String)
+    func logInEmptyError()
 }
 
 class HomeVM {
     weak var delegate: HomeVMDelegate?
     
-    func userSignUp(email: String, password: String){
-        Auth.auth().createUser(withEmail: email, password: password) { (authdata, error) in
-            if error != nil {
-                self.delegate?.createUserError()
-            } else {
-                self.delegate?.createUserSuccess()
+    func createUserButtonTapped(email: String, password: String){
+        if email != "", password != "" {
+            Auth.auth().createUser(withEmail: email, password: password) { (authdata, error) in
+                if let _ = error {
+                    self.delegate?.createUserError()
+                } else {
+                    self.delegate?.createUserSuccess()
+                }
             }
+        } else {
+            self.delegate?.createUserError()
         }
     }
     
-    func userSignIn(email: String, password: String){
-        Auth.auth().signIn(withEmail: email, password: password) { (authdata, error) in
-            if error != nil {
-                self.delegate?.logInError()
-            } else {
-                self.delegate?.logInSuccess()
+    func loginButtonTapped(email: String, password: String){
+        if email != "", password != "" {
+            Auth.auth().signIn(withEmail: email, password: password) { (authdata, error) in
+                if let error = error {
+                    self.delegate?.logInAuthError(errorMessage: error.localizedDescription)
+                } else {
+                    self.delegate?.logInSuccess()
+                }
             }
+        } else {
+            self.delegate?.logInEmptyError()
         }
     }
     

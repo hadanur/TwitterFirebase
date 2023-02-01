@@ -21,7 +21,7 @@ class CreateTweetVM {
         
         let firestoreDatabase = Firestore.firestore()
         
-        var firestoreReferance: DocumentReference? = nil
+        var firestoreReferance: DocumentReference?
         
         let firestoreTweet = ["tweetedBy": Auth.auth().currentUser!.email!, "tweetDescription": tweetDescription] as [String: Any]
         

@@ -8,6 +8,6 @@
 import Foundation
 
 struct TweetModel: Codable {
-    let tweetedBy: String
-    let tweetDescription: String
+    let tweetedBy: String?
+    let tweetDescription: String?
 }

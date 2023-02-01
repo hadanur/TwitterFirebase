@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 class FeedCell: UITableViewCell {
-    @IBOutlet weak var feedView: UIView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var userTextLabel: UILabel!
-    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet private weak var feedView: UIView!
+    @IBOutlet private weak var usernameLabel: UILabel!
+    @IBOutlet private weak var userTextLabel: UILabel!
+    @IBOutlet private weak var profilePicture: UIImageView!
     
     
     func configure(tweet: TweetModel){

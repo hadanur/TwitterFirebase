@@ -22,7 +22,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let currentUser = Auth.auth().currentUser
         
-        if currentUser != nil {
+//        if currentUser != nil {
+//            let feedVC = FeedVC.create()
+//            navController.viewControllers = [feedVC]
+//            window?.rootViewController = navController
+//            window?.makeKeyAndVisible()
+//        } else {
+//            let homeVC = HomeVC.create()
+//            navController.viewControllers = [homeVC]
+//            window?.rootViewController = navController
+//            window?.makeKeyAndVisible()
+//        }
+
+        if let _ = currentUser {
             let feedVC = FeedVC.create()
             navController.viewControllers = [feedVC]
             window?.rootViewController = navController

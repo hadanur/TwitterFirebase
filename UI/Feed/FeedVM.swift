@@ -18,25 +18,26 @@ class FeedVM {
     var tweets = [TweetModel]()
     weak var delegate: FeedVMDelegate?
     
-    func getDataFromFirebase(){
-        let fireStoreDatabase = Firestore.firestore()
+    func viewDidLoad(){
+        let collection = Firestore.firestore().collection("Tweets")
         
-        fireStoreDatabase.collection("Tweets").addSnapshotListener { (snapshot, error) in
-            if error != nil {
+        collection.addSnapshotListener { (snapshot, error) in
+            guard let snapshot = snapshot else {
                 self.delegate?.getDataError()
-            } else {
-                if snapshot?.isEmpty != true && snapshot != nil {
-                    for document in snapshot!.documents {
-                        let documentID = document.documentID
-                        print(documentID)
-                        
-                        if let tweetedBy = document.get("tweetedBy") as? String,
-                           let tweetDescription = document.get("tweetDescription") as? String{
-                            self.tweets.append(TweetModel(tweetedBy: tweetedBy, tweetDescription: tweetDescription))
-                            DispatchQueue.main.async {
-                                self.delegate?.getDataSuccess()
-                            }
-                        }
+                return
+            }
+            
+            if !snapshot.isEmpty {
+                for document in snapshot.documents {
+                    let _ = document.documentID
+                    
+                    let tweet = TweetModel(tweetedBy: document.get("tweetedBy") as? String,
+                                           tweetDescription: document.get("tweetDescription") as? String)
+                    
+                    self.tweets.append(tweet)
+                    
+                    DispatchQueue.main.async {
+                        self.delegate?.getDataSuccess()
                     }
                 }
             }

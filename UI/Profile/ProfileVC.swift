@@ -18,32 +18,26 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let userFeedCell = UINib(nibName: "UserFeedCell", bundle: nil)
+        tableView.register(userFeedCell, forCellReuseIdentifier: "userFeedCell")
+
         tableView.delegate = self
         tableView.dataSource = self
         viewModel.delegate = self
-        viewModel.getDataFromFirebase()
+
+        viewModel.viewDidLoad()
         setupUI()
-        
-        userEmail.text = Auth.auth().currentUser?.email
-        
-        let userFeedCell = UINib(nibName: "UserFeedCell", bundle: nil)
-        tableView.register(userFeedCell, forCellReuseIdentifier: "userFeedCell")
-        
+    }
+    
+    @objc private func logoutButtonClicked() {
+        viewModel.logoutButtonTapped()
+    }
+    
+    private func setupUI() {
         title = "Profil"
-        
+
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(logoutButtonClicked))
-    }
-    
-    @objc func logoutButtonClicked() {
-        do {
-            try Auth.auth().signOut()
-            navigationController?.pushViewController(HomeVC.create(), animated: true)
-        } catch {
-            self.showAlert(title: "Error", message: "Çıkış Yapılamadı")
-        }
-    }
-    
-    private func setupUI() {
+
         profilePicture.layer.cornerRadius = 24
         profilePicture.layer.borderWidth = 2
         profilePicture.layer.borderColor = UIColor.white.cgColor
@@ -81,6 +75,20 @@ extension ProfileVC: ProfileVMDelegate {
         self.showAlert(title: "Hata", message: "Tekrar Deneyin.")
     }
     
-    
+    func getUserMail(_ mail: String) {
+        userEmail.text = mail
+    }
+
+    func getUserMailError() {
+        self.showAlert(title: "Hata", message: "Tekrar Deneyin.")
+    }
+
+    func logout() {
+        navigationController?.pushViewController(HomeVC.create(), animated: true)
+    }
+
+    func logoutError() {
+        self.showAlert(title: "Error", message: "Çıkış Yapılamadı")
+    }
 }
 

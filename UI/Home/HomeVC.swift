@@ -10,33 +10,24 @@ import Firebase
 import FirebaseAuth
 
 class HomeVC: UIViewController {
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet private weak var usernameField: UITextField!
+    @IBOutlet private weak var passwordField: UITextField!
     
-    var viewModel: HomeVM!
+    private var viewModel: HomeVM!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-
     }
     
-    @IBAction func loginButtonClicked(_ sender: Any) {
-        if usernameField.text != "",
-           passwordField.text != "" {
-            viewModel.userSignIn(email: usernameField.text!, password: passwordField.text!)
-        } else {
-            viewModel.delegate?.logInError()
-        }
+    @IBAction private func loginButtonClicked(_ sender: Any) {
+        guard let username = usernameField.text, let password = passwordField.text else { return }
+        viewModel.loginButtonTapped(email: username, password: password)
     }
     
-    @IBAction func createUserButtonClicked(_ sender: Any) {
-        if usernameField.text != "",
-           passwordField.text != "" {
-            viewModel.userSignUp(email: usernameField.text!, password: passwordField.text!)
-        } else {
-            viewModel.delegate?.createUserError()
-        }
+    @IBAction private func createUserButtonClicked(_ sender: Any) {
+        guard let username = usernameField.text, let password = passwordField.text else { return }
+        viewModel.createUserButtonTapped(email: username, password: password)
     }
 }
 
@@ -49,12 +40,16 @@ extension HomeVC {
 }
 
 extension HomeVC: HomeVMDelegate {
-    func logInSuccess() {
-        navigationController?.pushViewController(FeedVC.create(), animated: true)
+    func logInAuthError(errorMessage: String) {
+        self.showAlert(title: "Hata", message: errorMessage)
     }
     
-    func logInError() {
-        self.showAlert(title: "Hata", message: "Kullanıcı adı veya Parola yanlış")
+    func logInEmptyError() {
+        self.showAlert(title: "Hata", message: "Boş")
+    }
+    
+    func logInSuccess() {
+        navigationController?.pushViewController(FeedVC.create(), animated: true)
     }
     
     func createUserSuccess() {
